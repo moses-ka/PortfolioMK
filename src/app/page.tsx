@@ -1,17 +1,23 @@
-import Image from "next/image";
 import ParticlesEffect from "./components/particlesEffect";
 import AboutMe from "./components/AboutMe";
+import Skills from "./components/Skills";
+
 export default function Home() {
   return (
     <>
-    
-    <section id="Hero" className=" h-full">
-      <ParticlesEffect  />
-    </section>
-    <section id="AboutMe" className=" absolute  top-3/4 md:top-full right-0 overflow-hidden  w-full">
-      <AboutMe />
-
-    </section>
+      <body className="flex flex-row justify-center items-center w-screen overflow-hidden">
+        <section id="Hero" className="w-full lg:h-[800px] md:h-[760px] h-[460px] overflow-hidden">
+          <ParticlesEffect />
+        </section>
+     
+        <section id="AboutMe" className="w-full h-full">
+          <AboutMe />
+        </section>
+        
+        <section id="Skills" className="w-full h-96 mt-10 overflow-hidden">
+          <Skills />
+        </section>
+      </body>
     </>
   );
 }
