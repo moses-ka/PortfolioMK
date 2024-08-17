@@ -60,16 +60,24 @@ class Particle {
 }
 
 function ParticlesEffect() {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    const [screenHeight, setScreenHeight] = useState(window.innerHeight);
+    const [screenWidth, setScreenWidth] = useState<number | null>(null);
+    const [screenHeight, setScreenHeight] = useState<number | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const particlesArrayRef = useRef<Particle[]>([]);
     const mouseRef = useRef({ x: 0, y: 0, radius: 10 });
     const timeoutRef = useRef<number | null>(null);
 
     useEffect(() => {
+        // Check if window is available
+        if (typeof window !== 'undefined') {
+            setScreenWidth(window.innerWidth);
+            setScreenHeight(window.innerHeight);
+        }
+    }, []);
+
+    useEffect(() => {
         const canvas = canvasRef.current;
-        if (canvas && canvas.getContext) {
+        if (canvas && screenWidth && screenHeight) {
             const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
             canvas.width = screenWidth;
             canvas.height = screenHeight;
@@ -78,13 +86,13 @@ function ParticlesEffect() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 const calculatedFontSize = Math.max(Math.min(screenWidth / 10, 80), 16);
-                const particleSize = screenWidth > 768 ? 4 : 2;
+                const particleSize = screenWidth > 768 ? 3 : 2;
                 const lineSpacing = screenWidth > 768 ? 0.14 : 0.08;
 
                 ctx.fillStyle = 'white';
                 ctx.font = `${calculatedFontSize}px sans-serif`;
 
-                const positions = [ // the postion of the text 
+                const positions = [ // the position of the text 
                     { text: 'Elevating Digital', x: screenWidth * 0.12, y: screenHeight * 0.2 },
                     { text: 'Experiences', x: screenWidth * 0.40, y: screenHeight * (0.2 + lineSpacing) },
                     { text: 'Skillfully Crafted', x: screenWidth * 0.03, y: screenHeight * (0.2 + 2 * lineSpacing) },
@@ -101,7 +109,7 @@ function ParticlesEffect() {
 
                 const init = (): void => {
                     particlesArrayRef.current = [];
-                    const densityAdjustment = screenWidth < 768 ? 1 : 3;
+                    const densityAdjustment = screenWidth > 768 ? 3 : 1;
 
                     for (let y = 0, y2 = textCords.height; y < y2; y += densityAdjustment) {
                         for (let x = 0, x2 = textCords.width; x < x2; x += densityAdjustment) {
@@ -137,8 +145,10 @@ function ParticlesEffect() {
             const handleResize = () => {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(() => {
-                    setScreenWidth(window.innerWidth);
-                    setScreenHeight(window.innerHeight);
+                    if (typeof window !== 'undefined') {
+                        setScreenWidth(window.innerWidth);
+                        setScreenHeight(window.innerHeight);
+                    }
                 }, 200);
             };
 
@@ -151,7 +161,7 @@ function ParticlesEffect() {
     }, [screenWidth, screenHeight]);
 
     const handleInteraction = (e: React.MouseEvent<HTMLCanvasElement>) => {
-        if (screenWidth < 768) {
+        if (screenWidth && screenWidth < 768) {
             mouseRef.current = { x: e.clientX, y: e.clientY, radius: 40 };
             particlesArrayRef.current.forEach(p => p.triggered = true);
 
@@ -168,14 +178,14 @@ function ParticlesEffect() {
     };
 
     const handleMouseMovement = (e: React.MouseEvent<HTMLCanvasElement>) => {
-        if (screenWidth >= 768) {
+        if (screenWidth && screenWidth >= 768) {
             mouseRef.current = { x: e.clientX, y: e.clientY, radius: 60};
             particlesArrayRef.current.forEach(p => p.triggered = true);
         }
     };
 
     return (
-        <canvas className=' absolute top-0 right-0 mt-8 overflow-hidden'
+        <canvas className=' canvas absolute top-0 left-0 mt-8 overflow-hidden '
             onMouseDown={handleInteraction} // Trigger effect on mousedown for small screens
             onMouseMove={handleMouseMovement} // Normal hover effect for large screens
             ref={canvasRef}

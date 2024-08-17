@@ -1,11 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   background-color: rgb(21, 20, 20);
+  scrollbar-width: thin;
+ scroll-behavior: smooth;
+ scrollbar-color: #ffffff #282828;
+ 
+}
+body{
+  font-family: 'Jost', sans-serif;
+}
+.canvas{
+  font-family: 'Jost', sans-serif;
 }
 
+.glitch-container {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: -2px;
+  overflow: hidden;
+}
+
+/* Common glitch styles */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Fira Mono', monospace;
+  letter-spacing: -2px;
+}
+
+/* Unique glitch effects */
+.glitch-text.effect-1:before,
+.glitch-text.effect-1:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glitch-text.effect-1:before {
+  animation: glitchTop1 1s linear infinite;
+  clip-path: inset(0 0 67% 0);
+}
+
+.glitch-text.effect-1:after {
+  animation: glitchBottom1 1.5s linear infinite;
+  clip-path: inset(67% 0 0 0);
+}
+
+.glitch-text.effect-2:before,
+.glitch-text.effect-2:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glitch-text.effect-2:before {
+  animation: glitchTop2 1.2s linear infinite;
+  clip-path: inset(0 0 60% 0);
+}
+
+.glitch-text.effect-2:after {
+  animation: glitchBottom2 1.4s linear infinite;
+  clip-path: inset(60% 0 0 0);
+}
+
+/* Add more unique glitch effects here */
+
+/* Keyframes for glitch animations */
+@keyframes glitchTop1 {
+  0%, 100% { transform: translate(0, 0); }
+  2%, 64% { transform: translate(2px, -2px); }
+  4%, 60% { transform: translate(-2px, 2px); }
+  62% { transform: translate(13px, -1px) skew(-13deg); }
+}
+
+@keyframes glitchBottom1 {
+  0%, 100% { transform: translate(0, 0); }
+  2%, 64% { transform: translate(-2px, 0); }
+  4%, 60% { transform: translate(-2px, 0); }
+  62% { transform: translate(-22px, 5px) skew(31deg); }
+}
+
+@keyframes glitchTop2 {
+  0%, 100% { transform: translate(0, 0); }
+  3%, 66% { transform: translate(2px, -3px); }
+  6%, 63% { transform: translate(-4px, 4px); }
+  65% { transform: translate(10px, -2px) skew(-10deg); }
+}
+
+@keyframes glitchBottom2 {
+  0%, 100% { transform: translate(0, 0); }
+  3%, 66% { transform: translate(-4px, 1px); }
+  6%, 63% { transform: translate(-4px, 1px); }
+  65% { transform: translate(-18px, 6px) skew(18deg); }
+}
