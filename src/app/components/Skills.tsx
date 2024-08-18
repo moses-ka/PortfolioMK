@@ -2,8 +2,7 @@
 import {motion} from "framer-motion";
 import { useState } from "react";
 export default function Skills() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
+
 
   return (
     <>
@@ -12,16 +11,15 @@ export default function Skills() {
        className="flex flex-col  justify-center items-center text-white font-bold gap-6 ">
         <motion.div
         initial={{ x: '-100vw' }}  // Start from off-screen right
-        animate={isHovered ? { x: 0 } : { x: '100vw' }}  // Move off-screen left
+        animate={{ x: '100vw' }}  // Move off-screen left
         transition={{
-          duration: isHovered ? 2 : 15,  // Slow down on hover, resume speed after hover
-          repeat: isHovered ? 0 : Infinity, // Stop repeating on hover
+          duration:  15,  // Slow down on hover, resume speed after hover
+          repeat: Infinity, // Stop repeating on hover
           ease: "linear"
         }}
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
+        
         whileHover={{
-          scale: 1.2,              // Scale up the element on hover
+          scale: 1.5,              // Scale up the element on hover
         }}
          className="flex items-center justify-center gap-4 h-44">
 
@@ -126,18 +124,18 @@ export default function Skills() {
         </li>
         </motion.div>
         <motion.div
-        initial={{ x: '100vw' }}  // Start from off-screen right
-        animate={isHovered2 ? { x: 0 } : { x: '-100vw' }}  // Move off-screen left
-        transition={{
-          duration: isHovered2 ? 2 : 15,  // Slow down on hover, resume speed after hover
-          repeat: isHovered2 ? 0 : Infinity, // Stop repeating on hover
-          ease: "linear"
-        }}
-        onHoverStart={() => setIsHovered2(true)}
-        onHoverEnd={() => setIsHovered2(false)}
-        whileHover={{
-          scale: 1.2,              // Scale up the element on hover
-        }}
+          initial={{ x: '100vw' }}  // Start from off-screen right
+      animate={{ x: '-100vw' }}  // Move off-screen left
+      transition={{
+        duration:  15,  // Slow down on hover, resume speed after hover
+        repeat: Infinity,  // Repeat indefinitely
+        ease: "linear"
+      }}
+      
+      whileHover={{
+        scale: 1.5,  // Scale up the element on hover
+
+      }}
          className="flex justify-center items-center gap-4 h-44">
 
         <li className="flex flex-col justify-center items-center      ">

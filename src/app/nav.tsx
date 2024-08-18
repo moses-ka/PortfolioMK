@@ -14,7 +14,9 @@ export default function Nav() {
 
         
             <div id="logo" className="w-28 h-full p-4 ">
-                <Image src={logoWhite} alt="logo" width={120} height={48} />
+                <Image 
+                priority
+                src={logoWhite} alt="logo" width={120} height={48} />
             </div>
             <div id="mood" className="flex justify-normal items-center gap-2 md:gap-4">
                 <div className="bg-white rounded-full h-4 w-4"></div>
