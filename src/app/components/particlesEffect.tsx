@@ -69,7 +69,7 @@ function ParticlesEffect() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const particlesArrayRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0, radius: 10 });
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -148,16 +148,17 @@ function ParticlesEffect() {
       drawTextAndParticles();
       animate();
 
-      let resizeTimeout: number;
-      const handleResize = () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          if (typeof window !== "undefined") {
-            setScreenWidth(window.innerWidth);
-            setScreenHeight(window.innerHeight);
-          }
-        }, 200);
-      };
+      
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  const handleResize = () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (typeof window !== "undefined") {
+        setScreenWidth(window.innerWidth);
+        setScreenHeight(window.innerHeight);
+      }
+    }, 200);
+  };
 
       window.addEventListener("resize", handleResize);
 

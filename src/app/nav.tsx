@@ -9,7 +9,7 @@ import logoWhite from "../assets/logoWhite.png"
 export default function Nav() {
     return (
       <>
-      <nav>
+      <nav className="w-screen overflow-hidden">
        <div className="flex justify-between items-center w-full">
 
         
