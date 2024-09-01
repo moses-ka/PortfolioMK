@@ -1,7 +1,7 @@
 import ParticlesEffect from "./components/particlesEffect";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
-
+import Projects from "./components/Projects";
 export default function Home() {
   return (
     <>
@@ -17,6 +17,11 @@ export default function Home() {
         <section id="Skills" className="w-full h-96 mt-10 ">
           <Skills />
         </section>
+        <section id="Projects" className="w-full h-full mt-10 ">
+          <Projects />
+        </section>
+        
+
       </div>
     </>
   );
