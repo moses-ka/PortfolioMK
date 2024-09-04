@@ -24,10 +24,10 @@ export default function Projects() {
           initial={{ x: '-100vw' }}  
           animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-           className="  relative top-36 right-44 ">
+           className="  relative top-36 right-44  z-50">
           <img
-  
-  
+
+            
   
              className=" !max-w-[340px]  !max-h-[100px] "    
               alt="Figma  Logo"
@@ -40,12 +40,12 @@ export default function Projects() {
           animate={{ x: isInView1 ? 0 : 1000 }}
           transition={{ duration: 1 }}
           
-          className="  relative top-10 left-44 ">
+          className="  relative top-10 left-44 z-50 ">
           <img
   
   
   
-            className=" invert !max-w-[340px]  !max-h-[100px]    h  "
+            className=" invert !max-w-[340px]  !max-h-[100px]  index-z-10"
             alt="Next JS Skill Logo"
             src="https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000"
           />
@@ -56,9 +56,10 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isInView1 ? 1 : 0 }}
           transition={{ duration: 1 }}
+          whileHover={{ scale: 1.1 }}
           >
             
-          <Image src={project} alt="project1" width={800} height={400} 
+          <Image  src={project} alt="project1" width={800} height={400} 
           priority/>
           </motion.div>
            <div className=" relative bottom-10 animate-bounce right-96 bg-white rounded-3xl  ">
@@ -71,7 +72,7 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView1 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-           className=" relative  left-56 bottom-44 h-46 w-64
+           className=" relative  left-56 bottom-44 h-46 w-64 
           bg-white rounded-3xl 
            ">
            
@@ -93,7 +94,7 @@ export default function Projects() {
           
 
 
-           className="  relative top-36 left-44 ">
+           className="  relative top-36 left-44 z-50 ">
 
           <img
   
@@ -109,7 +110,7 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView2 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-           className="  relative top-10 right-44 ">
+           className="  relative top-10 right-44 z-50 ">
           <img
   
   
@@ -125,6 +126,7 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isInView2 ? 1 : 0 }}
           transition={{ duration: 1 }}
+          whileHover={{ scale: 1.1 }}
           >
             
 

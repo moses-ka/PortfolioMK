@@ -73,8 +73,17 @@ function ParticlesEffect() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setScreenWidth(window.innerWidth);
-      setScreenHeight(window.innerHeight);
+      const handleResize = () => {
+        setScreenWidth(window.innerWidth);
+        setScreenHeight(window.innerHeight);
+      };
+
+      handleResize(); // Initial setting
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     }
   }, []);
 
@@ -82,8 +91,19 @@ function ParticlesEffect() {
     const canvas = canvasRef.current;
     if (canvas && screenWidth && screenHeight) {
       const ctx = canvas.getContext("2d", { willReadFrequently: true })!;
-      canvas.width = screenWidth;
-      canvas.height = screenHeight;
+      
+      const isTabletPortrait =
+        screenWidth < screenHeight && screenWidth >= 768 && screenWidth <= 1024;
+
+      if (isTabletPortrait) {
+        // Tablet in portrait mode: use width-based height
+        canvas.width = screenWidth;
+        canvas.height = screenWidth * (9 / 16);
+      } else {
+        // Phone or other devices: use both width and height
+        canvas.width = screenWidth;
+        canvas.height = screenHeight;
+      }
 
       const drawTextAndParticles = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -99,19 +119,19 @@ function ParticlesEffect() {
         ctx.font = `${calculatedFontSize}px sans-serif`;
 
         const positions = [
-          { text: "Elevating Digital", x: screenWidth * 0.12, y: screenHeight * 0.2 },
-          { text: "Experiences", x: screenWidth * 0.4, y: screenHeight * (0.2 + lineSpacing) },
-          { text: "Skillfully Crafted", x: screenWidth * 0.03, y: screenHeight * (0.2 + 2 * lineSpacing) },
-          { text: "by a Creative", x: screenWidth * 0.3, y: screenHeight * (0.2 + 3 * lineSpacing) },
-          { text: "Web Developer", x: screenWidth * 0.1, y: screenHeight * (0.2 + 4 * lineSpacing) },
-          { text: "Web Designer", x: screenWidth * 0.32, y: screenHeight * (0.2 + 5 * lineSpacing) },
+          { text: "Elevating Digital", x: screenWidth * 0.12, y: canvas.height * 0.2 },
+          { text: "Experiences", x: screenWidth * 0.4, y: canvas.height * (0.2 + lineSpacing) },
+          { text: "Skillfully Crafted", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
+          { text: "by a Creative", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
+          { text: "Web Developer", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
+          { text: "Web Designer", x: screenWidth * 0.32, y: canvas.height * (0.2 + 5 * lineSpacing) },
         ];
 
         positions.forEach(({ text, x, y }) => {
           ctx.fillText(text, x, y);
         });
 
-        const textCords = ctx.getImageData(0, 0, screenWidth, screenHeight);
+        const textCords = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
         const init = (): void => {
           particlesArrayRef.current = [];
@@ -136,7 +156,7 @@ function ParticlesEffect() {
       const animate = () => {
         const divisor = screenWidth < 768 ? 60 : 20;
         if (ctx) {
-          ctx.clearRect(0, 0, screenWidth, screenHeight);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
           particlesArrayRef.current.forEach((particle) => {
             particle.draw(ctx);
             particle.update(mouseRef.current, divisor);
@@ -148,23 +168,6 @@ function ParticlesEffect() {
       drawTextAndParticles();
       animate();
 
-      
-  let resizeTimeout: ReturnType<typeof setTimeout>;
-  const handleResize = () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      if (typeof window !== "undefined") {
-        setScreenWidth(window.innerWidth);
-        setScreenHeight(window.innerHeight);
-      }
-    }, 200);
-  };
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
     }
   }, [screenWidth, screenHeight]);
 
@@ -206,7 +209,7 @@ function ParticlesEffect() {
 
   return (
     <canvas
-      className="canvas overflow-hidden absolute top-0 md:top-10 left-0 z-0 "
+      className="canvas overflow-hidden w-full absolute top-0 md:top-10 left-0 z-0"
       onMouseDown={handleInteraction}
       onMouseMove={handleMouseMovement}
       ref={canvasRef}
