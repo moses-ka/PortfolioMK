@@ -82,7 +82,7 @@ export default function Projects() {
           transition={{ duration: 1 }}
           className="relative left-68 bottom-44 md:left-56 md:bottom-44 h-46 w-64 bg-white rounded-3xl"
         >
-          <p className="text-black p-4">
+          <p className="text-black p-4 md:text-base text-xs">
             FlexPro – Your Ultimate Gym Buddy
             A fitness app built with React, MongoDB, and Node.js.
             Redesigned to showcase my improved web design skills while delivering a smooth,
@@ -144,7 +144,7 @@ export default function Projects() {
           transition={{ duration: 1 }}
           className="relative left-68 bottom-44 md:left-56 md:bottom-44 h-46 w-64 bg-white rounded-3xl"
         >
-          <p className="text-black p-4">
+          <p className="text-black p-4  text-xs md:text-base">
             Anime T-Shirt Market
             A small anime-themed T-shirt marketplace with a Django back end and TypeScript front end.
             Designed to deliver a smooth, dynamic shopping experience for anime fans.
