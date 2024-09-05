@@ -1,5 +1,6 @@
 "use client";
 import {motion} from "framer-motion";
+ import Image from "next/image"
 import { useState } from "react";
 export default function Skills() {
 
@@ -25,7 +26,10 @@ export default function Skills() {
 
         
         <li className="flex flex-col justify-center items-center    ">
-                      <img
+                      <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -36,7 +40,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">Figma</span>
         </li>
         <li className="flex flex-col justfiy-center items-center          ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -46,7 +53,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2      ">HTML</span>
         </li>
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -57,7 +67,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2         ">CSS</span>
         </li>
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -68,7 +81,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">JS</span>
         </li>
         <li className="flex flex-col justfiy-center items-center             ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -79,7 +95,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2           duration-1000">Tailwind</span>
         </li>
         <li className="flex flex-col justfiy-center items-center        ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -90,7 +109,9 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">SASS</span>
         </li>
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
   
   
   
@@ -101,7 +122,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">Bootstrap</span>
         </li>
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -112,7 +136,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2        ">Git</span>
         </li>
         <li className="flex flex-col justfiy-center items-center           ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -139,7 +166,10 @@ export default function Skills() {
          className="flex justify-center items-center gap-4 h-44">
 
         <li className="flex flex-col justify-center items-center      ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -150,7 +180,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">NextJS</span>
         </li>
         <li className="flex flex-col justify-center items-center  ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -161,7 +194,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2         ">TypeScript</span>
         </li>
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -173,7 +209,10 @@ export default function Skills() {
         </li>
 
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -184,7 +223,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">Node.js</span>
         </li>
         <li className="flex flex-col justify-center items-center    ">
-                  <img
+                  <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -195,7 +237,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">Python</span>
         </li>
         <li className="flex flex-col justify-center items-center    ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -206,7 +251,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2          ">Django</span>
         </li>
         <li className="flex flex-col justfiy-center items-center           ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -217,7 +265,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2        ">PostgreSQL</span>
         </li>
         <li className="flex flex-col justfiy-center items-center            ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
@@ -228,7 +279,10 @@ export default function Skills() {
           <span className="hidden md:inline-block m-2        ">MongoDB</span>
         </li>
         <li className="flex flex-col justfiy-center items-center          ">
-                     <img
+                     <Image
+                     width={100}
+                      height={100}
+  
   
   
   
