@@ -29,7 +29,9 @@ export default function Projects() {
           animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
           className="  relative top-36 right-28 md:top-36 md:right-44  z-50">
-          <img
+          <Image
+            width={100} 
+            height={100}
 
 
 
@@ -45,7 +47,9 @@ export default function Projects() {
           transition={{ duration: 1 }}
 
           className="  relative top-10 left-28 md:top-10 md:left-44 z-50 ">
-          <img
+          <Image
+            width={100}
+            height={100}
 
 
 
@@ -100,7 +104,10 @@ export default function Projects() {
 
           className="  relative  left-28 top-36 md:top-36 md:left-44 z-50 ">
 
-          <img
+          <Image
+
+            width={100}
+            height={100}
 
 
 
@@ -115,8 +122,9 @@ export default function Projects() {
           animate={{ x: isInView2 ? 0 : -1000 }}
           transition={{ duration: 1 }}
           className="  relative top-10 right-28 md:top-10 md:right-44 z-50 ">
-          <img
-
+          <Image
+            width={100}
+            height={100}
 
 
             className=" !max-w-[340px]  !max-h-[100px]     invert"
