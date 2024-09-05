@@ -15,7 +15,7 @@ export default function AboutMe() {
       ref={ref}
     >
       <div className="flex flex-row justify-center md:justify-start items-center w-full">
-        <p className="w-full md:w-6/6 text-sm md:text-'xl p-4 md:p-10 glitch-container leading-8  ">
+        <p className="w-full md:w-6/6 text-sm md:text-xl p-4 md:p-10 glitch-container leading-8  ">
           Heyy <span className="glitch-text effect-1" data-text="I'm Moses KM."> I'm Moses KM. </span> <br />
            As a creative problem solver, I thrive on turning <span className="glitch-text effect-1" data-text="challenges "> challenges </span> into <span className="glitch-text effect-1" data-text="opportunities."> opportunities. </span>  <br />
                            
