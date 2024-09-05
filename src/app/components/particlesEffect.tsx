@@ -74,8 +74,8 @@ function ParticlesEffect() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleResize = () => {
-        setScreenWidth(window.innerWidth);
-        setScreenHeight(window.innerHeight);
+        setScreenWidth(window?.innerWidth);
+        setScreenHeight(window?.innerHeight);
       };
 
       handleResize(); // Initial setting
