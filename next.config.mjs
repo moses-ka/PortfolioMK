@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-      domains: ['img.icons8.com'],
-    },
-  };
-  
-  export default nextConfig;
-  
+export default {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+};

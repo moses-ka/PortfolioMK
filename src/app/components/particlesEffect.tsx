@@ -98,11 +98,11 @@ function ParticlesEffect() {
       if (isTabletPortrait) {
         // Tablet in portrait mode: use width-based height
         canvas.width = screenWidth;
-        canvas.height = screenWidth * (9 / 16);
+        canvas.height = 920;
       } else {
         // Phone or other devices: use both width and height
         canvas.width = screenWidth;
-        canvas.height = screenHeight;
+        canvas.height = 500;
       }
 
       const drawTextAndParticles = () => {
@@ -209,7 +209,7 @@ function ParticlesEffect() {
 
   return (
     <canvas
-      className="canvas overflow-hidden w-full absolute top-0 md:top-10 left-0 z-0"
+      className="canvas overflow-hidden w-full absolute top-8 md:top-10 left-0 z-0"
       onMouseDown={handleInteraction}
       onMouseMove={handleMouseMovement}
       ref={canvasRef}

@@ -66,12 +66,13 @@ export default function Projects() {
           <Image
             src={screenWidth > 720 ? project : project1small}
             alt="project1"
-            width={800}
-            height={400}
+            width={screenWidth > 720 ? 800 : 400}
+            height={screenWidth > 720 ? 600 : 600}
             priority
           />
         </motion.div>
-        <div className="relative bottom-40 right-28 z-20 md:bottom-10 animate-bounce md:right-96 bg-white rounded-3xl">
+        <div className="relative bottom-40 right-28 z-20 md:bottom-10 animate-bounce md:right-96
+         bg-white rounded-3xl">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
@@ -129,8 +130,9 @@ export default function Projects() {
           <Image
             src={screenWidth > 720 ? project2 : project2small}
             alt="project2"
-            width={800}
-            height={400}
+            width={screenWidth > 720 ? 800 : 400}
+            height={screenWidth > 720 ? 600 : 600}
+            priority
           />
         </motion.div>
         <div className="relative bottom-40 right-28 z-20 md:bottom-10 md:right-96 bg-white animate-bounce rounded-3xl">
