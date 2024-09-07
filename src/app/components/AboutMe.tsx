@@ -19,11 +19,13 @@ export default function AboutMe() {
         transition={{ duration: 3 }}
         ref={ref}
        className="flex flex-row justify-center md:justify-start items-center w-full">
-        <div className="w-full md:w-6/6 !text-2xl md:text-3xl p-4 md:p-10 glitch-container leading-8">
-        <TypingEffect /> <br />
-        <p>My journey into web development and design is deeply rooted in my artistic background. What drew me in was the opportunity to merge my creative instincts with functional development, enabling me to craft visually stunning and impactful designs.</p>
+        <div className="w-full md:w-6/6 !text-2xl md:!text-3xl p-4 md:p-10 glitch-container leading-8">
+        <TypingEffect text="Heyy I'm Moses KM" /> <br />
+        <p> My journey into web development and design is closely related to my artistic background. What drew me in was the opportunity to merge my creative instincts with functional development, enabling me to craft visually stunning and impactful designs.</p>
         <p>I’m on a path of continuous learning, always exploring new technologies and tools to refine my skills and achieve remarkable results. My role as a team player allows me to contribute effectively and assist others in reaching their goals.</p>
-        <p className="cta">I’m excited about the prospect of bringing my unique blend of art and development to create exceptional final products. Let’s team up for a project!</p>
+        <p className="">I’m excited about the prospect of bringing my unique blend of art and development to create exceptional final products.</p> 
+        <br />
+        <TypingEffect duration={260} text="Let’s team up for a project !"/>
     </div>
 
         </motion.div>

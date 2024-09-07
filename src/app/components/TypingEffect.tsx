@@ -2,22 +2,28 @@
 import  { useState, useEffect,useRef } from 'react';
 import { useInView,motion } from 'framer-motion';
 
-const TypingEffect = () => {
-  const textToType = "Hello, I'm Moses KM";
+type TypingEffectProps = {
+  text: string;
+  duration ?: number;
+};
+
+const TypingEffect = (props: TypingEffectProps) => {
+  const { text,duration } = props;
+  const textToType = text
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref);
-
+  console.log(text);
   useEffect(() => {
     const typingInterval = setInterval(() => {
-      if (currentIndex < textToType.length) {
+      if (currentIndex < text.length) {
         setTypedText((prevText) => prevText + textToType[currentIndex]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
       } else {
         clearInterval(typingInterval);
       }
-    }, 150); // Adjust typing speed as needed
+    }, duration? duration:100); // Adjust typing speed as needed
 
     return () => {
       clearInterval(typingInterval);

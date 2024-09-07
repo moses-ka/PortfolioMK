@@ -124,7 +124,7 @@ function ParticlesEffect() {
           { text: "Skillfully Crafted", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
           { text: "by a Creative", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
           { text: "Web Developer", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
-          { text: "Web Designer", x: screenWidth * 0.32, y: canvas.height * (0.2 + 5 * lineSpacing) },
+          { text: "And Designer", x: screenWidth * 0.32, y: canvas.height * (0.2 + 5 * lineSpacing) },
         ];
 
         positions.forEach(({ text, x, y }) => {

@@ -27,13 +27,13 @@ export default function Nav() {
 
 
                     </div>
-                    <div id="mood" className="flex justify-normal items-center gap-2 md:gap-4">
-                        <div className="bg-white rounded-full h-4 w-4"></div>
-                        <LuSunMoon size={26} className="text-white hover:scale-125" />
+                    <div id="mood" className="flex justify-center items-center gap-2 md:gap-4 mr-4">
+                        <button className="bg-white rounded-full h-4 w-4 "></button>
+                        <LuSunMoon size={26} className="text-white hover:scale-125 " />
                         <Btn text={'Mood'} />
 
                     </div>
-                    <div id="navagators">
+                    <div id="navagators" className="hidden md:block">
                         <ul className="flex justify-between items-center gap-4 w-full p-4">
                             <li>
                                 <Btn text={'Contact'} />
