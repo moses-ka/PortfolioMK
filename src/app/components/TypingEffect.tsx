@@ -14,7 +14,7 @@ const TypingEffect = (props: TypingEffectProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref);
-  console.log(text);
+  
   useEffect(() => {
     const typingInterval = setInterval(() => {
       if (currentIndex < text.length) {
