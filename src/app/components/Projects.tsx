@@ -33,7 +33,7 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-          className="relative top-36 right-28 md:top-36 md:right-44 z-50"
+          className="relative top-36 right-24 md:top-36 md:right-44 z-50"
         >
           <Image
             width={100}
@@ -47,7 +47,7 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView1 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative top-10 left-28 md:top-10 md:left-44 z-50"
+          className="relative top-10 left-24 md:top-10 md:left-44 z-50"
         >
           <Image
             width={100}
@@ -71,17 +71,17 @@ export default function Projects() {
             priority
           />
         </motion.div>
-        <div className="relative bottom-40 right-28 z-20 md:bottom-10 animate-bounce md:right-96
-         bg-white rounded-3xl">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+        <div className="relative bottom-12 right-36 z-20 md:bottom-10 md:right-96 bg-white animate-bounce 
+        rounded-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
         </div>
         <motion.div
-          initial={{ x: '-100vw' }}
-          animate={{ x: isInView1 ? 0 : 1000 }}
+          initial={{ x: '100vw' }}
+          animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-          className="relative left-68 bottom-44 md:left-56 md:bottom-44 h-46 w-64 bg-white rounded-3xl"
+          className="relative left-68 bottom-32 md:left-56 md:bottom-44 h-46 w-64 bg-white rounded-3xl"
         >
           <p className="text-black p-4 md:text-base text-xs">
             FlexPro – Your Ultimate Gym Buddy
@@ -96,29 +96,33 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative left-28 top-36 md:top-36 md:left-44 z-50"
+          className="relative left-24 top-32 md:top-32 md:left-44 z-50"
         >
           <Image
             width={100}
             height={100}
             className="!max-w-[340px] !max-h-[100px] index-10"
             alt="TypeScript Logo"
-            src="https://img.icons8.com/?size=100&id=nCj4PvnCO0tZ&format=png&color=000000"
+            src="https://img.icons8.com/?size=100&id=wpZmKzk11AzJ&format=png&color=000000"
           />
         </motion.div>
         <motion.div
-          initial={{ x: '100vw' }}
-          animate={{ x: isInView2 ? 0 : -1000 }}
+          initial={{ x: '-100vw' }}
+          animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative top-10 right-28 md:top-10 md:right-44 z-50"
+          className="relative top-12 right-20 md:top-10 md:right-44 z-50"
         >
+          <div className='bg-white w-28 h-16  flex justify-center items-center rounded-xl'>
+
+          
           <Image
             width={100}
             height={100}
-            className="!max-w-[340px] !max-h-[100px] invert"
+            className=" "
             alt="Django Skill Logo"
             src="https://img.icons8.com/?size=100&id=mUBILbYvUMq8&format=png&color=000000"
           />
+          </div>
         </motion.div>
         <motion.div
           ref={ref2}
@@ -135,8 +139,9 @@ export default function Projects() {
             priority
           />
         </motion.div>
-        <div className="relative bottom-40 right-28 z-20 md:bottom-10 md:right-96 bg-white animate-bounce rounded-3xl">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+        <div className="relative bottom-12 right-36 z-20 md:bottom-10 md:right-96 bg-white animate-bounce 
+        rounded-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
         </div>
@@ -144,7 +149,7 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative left-68 bottom-44 md:left-56 md:bottom-44 h-46 w-64 bg-white rounded-3xl"
+          className="relative left-62 bottom-32 md:left-56 md:bottom-44 h-46 w-64 bg-white rounded-3xl"
         >
           <p className="text-black p-4  text-xs md:text-base">
             Anime T-Shirt Market

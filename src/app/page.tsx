@@ -6,7 +6,7 @@ export default function page() {
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full p-2 h-full overflow-hidden">
-        <div id="Hero" className="w-full overflow-hidden  lg:h-[800px] md:h-[760px] h-[460px] ">
+        <div id="Hero" className="w-full overflow-hidden  md:h-[560px] h-[290px] ">
           <ParticlesEffect />
         </div>
 
