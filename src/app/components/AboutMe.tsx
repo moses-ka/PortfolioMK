@@ -24,11 +24,24 @@ export default function AboutMe() {
        
         <div className="w-full md:w-6/6 !text-2xl md:!text-3xl p-4 md:p-10 glitch-container leading-8">
         <TypingEffect text="Heyy I'm Moses KM" /> <br />
-        <p> My journey into web development and design is closely related to my artistic background. What drew me in was the opportunity to merge my creative instincts with functional development, enabling me to craft visually stunning and impactful designs.</p>
-        <p>I’m on a path of continuous learning, always exploring new technologies and tools to refine my skills and achieve remarkable results. My role as a team player allows me to contribute effectively and assist others in reaching their goals.</p>
-        <p className="">I’m excited about the prospect of bringing my unique blend of art and development to create exceptional final products.</p> 
+
+        <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 3 }}
+        > My journey into web development and design is closely related to my artistic background. What drew me in was the opportunity to merge my creative instincts with functional development, enabling me to craft visually stunning and impactful designs.</motion.p>
+        <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 4 }}
+        >I’m on a path of continuous learning, always exploring new technologies and tools to refine my skills and achieve remarkable results. My role as a team player allows me to contribute effectively and assist others in reaching their goals.</motion.p>
+        <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 5 }}
+         className="">I’m excited about the prospect of bringing my unique blend of art and development to create exceptional final products.</motion.p> 
         <br />
-        <TypingEffect duration={260} text="Let’s team up for a project !"/>
+        <TypingEffect duration={160} text="Let’s team up for a project !"/>
     </div>
 
         </motion.div>

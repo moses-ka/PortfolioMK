@@ -12,8 +12,10 @@ const TypingEffect = (props: TypingEffectProps) => {
   const textToType = text
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [animate, setAnimate] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
+
   
   useEffect(() => {
     const typingInterval = setInterval(() => {
@@ -28,8 +30,8 @@ const TypingEffect = (props: TypingEffectProps) => {
     return () => {
       clearInterval(typingInterval);
     };
-  }, [currentIndex]);
-
+  }, [currentIndex,animate]);
+    console.log(isInView,'this is inview')
   return (
     <div className="typeEffect">
       <motion.p 

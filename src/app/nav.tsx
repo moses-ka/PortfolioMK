@@ -4,8 +4,8 @@ import { LuSunMoon } from "react-icons/lu";
 export default function Nav() {
     return (
         <>
-            <nav className="w-full overflow-hidden">
-                <div className="flex justify-between items-center w-full">
+            <nav className="w-full overflow-hidden sticky top-0 left-0  z-50  h-20  bg-[#282828] bg-opacity-90">
+                <div className="flex justify-between items-center w-full  ">
 
 
                     <div id="logo" className="w-28 h-full p-4 ">

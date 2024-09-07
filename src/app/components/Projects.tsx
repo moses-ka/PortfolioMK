@@ -65,7 +65,7 @@ export default function Projects() {
         >
           <Image
             src={screenWidth > 720 ? project : project1small}
-            alt="project1"
+            alt="project1 photo"
             width={screenWidth > 720 ? 800 : 400}
             height={screenWidth > 720 ? 600 : 600}
             priority
