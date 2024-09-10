@@ -177,7 +177,7 @@ export default function Skills() {
   
   
   
-            className=" invert !max-w-[340px]  !max-h-[100px]    h  "
+            className={`${localTheme.dark? 'invert !max-w-[340px]  !max-h-[100px] ':'!max-w-[340px]  !max-h-[100px] '}`} 
             alt="Next JS Skill Logo"
             src="https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000"
           />
@@ -205,7 +205,7 @@ export default function Skills() {
   
   
   
-            className=" !max-w-[340px]  !max-h-[100px]      "
+            className={`${localTheme.dark? "invert":'invert-0'}`}
             alt="ExpressJs Skill Logo"
             src="https://img.icons8.com/?size=100&id=WNoJgbzDr3i2&format=png&color=000000"
           />
@@ -248,7 +248,7 @@ export default function Skills() {
   
   
   
-            className=" !max-w-[340px]  !max-h-[100px]     invert"
+            className={`${localTheme.dark? 'invert !max-w-[340px]  !max-h-[100px] ':'!max-w-[340px]  !max-h-[100px] '}`} 
             alt="Django Skill Logo"
             src="https://img.icons8.com/?size=100&id=mUBILbYvUMq8&format=png&color=000000"
           />

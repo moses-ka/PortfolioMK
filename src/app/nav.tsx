@@ -1,10 +1,7 @@
 'use client';
-import Btn from "./components/Btn";
-import { LuSunMoon } from "react-icons/lu";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {Theme} from "../typs";
-import { useStore } from "./store";
+import  useStore from "./store";
 export default function Nav() {
     const {theme, setTheme} = useStore();
     const [moodIndex, setMoodIndex] = useState(0);
@@ -116,8 +113,40 @@ export default function Nav() {
                         <ul className="flex justify-between items-center gap-4 w-full p-4">
                             <li>
                                 <a className=" cursor-pointer" href="https://www.linkedin.com/in/moses-ka-mohs/">
-                                    <Btn text={'Contact'} />
+                                   
+                                <motion.button
+                            className="relative px-6 py-3 font-semibold   rounded-2xl  "
+                            style={{ backgroundColor: theme.background , color: theme.foreground }}
+                            initial="rest"
+                            whileHover="hover"
+                            animate="rest"
+                            onClick={handleMoodChange}
+                        >
+                            {/* Background animation */}
+                            <motion.span
+                                className="absolute inset-0 w-full h-full rounded-2xl"
+                                style={{ backgroundColor: theme.foreground , color: theme.background }}
+                                variants={{
+                                    rest: { width: "0%", left: "0%" },
+                                    hover: { width: "100%", left: "0%" },
+                                }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                            />
 
+
+                            <motion.span
+                                className="relative z-10"
+                                style={{ color: theme.foreground  }}
+                                variants={{
+                                    rest: { color: theme.foreground  },
+                                    hover: { color: theme.background }
+                                }}
+                                transition={{ duration: 0.15, ease: "easeInOut" }}
+                            >
+                                Contact
+                            </motion.span>
+                            
+                        </motion.button>
                                 </a>
                             </li>
 

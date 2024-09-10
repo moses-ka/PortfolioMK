@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { useStore } from "../store";
+import  useStore  from "../store";
 import { color } from "framer-motion";
 class Particle {
   x: number;
