@@ -6,14 +6,14 @@ import { motion, useInView } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import project1small from '../../assets/project1small.png';
 import project2small from '../../assets/project2small.png';
-import useStore from '../store';
+import ThemeStore from '../store';
 export default function Projects() {
   const [screenWidth, setScreenWidth] = useState<number>(0);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const isInView1 = useInView(ref1);
   const isInView2 = useInView(ref2);
-  const localTheme = useStore((state) => state.theme);
+  const localTheme = ThemeStore((state) => state.theme);
 
   useEffect(() => {
     // Set screen width on the client side

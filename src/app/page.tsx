@@ -3,9 +3,9 @@ import ParticlesEffect from "./components/particlesEffect";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import useStore from "./store";
+import ThemeStore from "./store";
 export default function page() {
-  const theme = useStore((state) => state.theme);
+  const theme = ThemeStore((state) => state.theme);
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full p-2 h-full overflow-hidden"

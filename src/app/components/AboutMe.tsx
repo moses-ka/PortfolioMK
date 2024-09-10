@@ -2,13 +2,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import TypingEffect from "./TypingEffect";
-import useStore from "../store";
+import ThemeStore from "../store";
 
 
 export default function AboutMe() {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const localTheme = useStore((state) => state.theme);
+  const localTheme = ThemeStore((state) => state.theme);
 
   return (
     <div

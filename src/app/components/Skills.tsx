@@ -2,9 +2,9 @@
 import {motion} from "framer-motion";
  import Image from "next/image"
 import { useState } from "react";
-import useStore from "../store";
+import ThemeStore from "../store";
 export default function Skills() {
-  const localTheme = useStore((state) => state.theme);
+  const localTheme = ThemeStore((state) => state.theme);
 
 
   return (
