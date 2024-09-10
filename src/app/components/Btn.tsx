@@ -31,8 +31,8 @@ export default function Btn(props:BtnProps) {
           className="relative z-10"
           style={{ color: localTheme.foreground }}
           variants={{
-            rest: { color: "white" },
-            hover: { color: "black" },
+            rest: { color: localTheme.foreground },
+            hover: { color: localTheme.background },
           }}
           transition={{ duration: 0.15, ease: "easeInOut" }}
         >

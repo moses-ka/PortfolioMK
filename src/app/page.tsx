@@ -1,11 +1,19 @@
+'use client';
 import ParticlesEffect from "./components/particlesEffect";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import useStore from "./store";
 export default function page() {
+  const theme = useStore((state) => state.theme);
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-full p-2 h-full overflow-hidden">
+      <div className="flex flex-col justify-center items-center w-full p-2 h-full overflow-hidden"
+      
+      style={{ backgroundColor:theme.background ,
+        color:theme.foreground 
+        }}
+      >
         <div id="Hero" className="w-full overflow-hidden  md:h-[560px] h-[290px] ">
           <ParticlesEffect />
         </div>

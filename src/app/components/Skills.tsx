@@ -2,14 +2,18 @@
 import {motion} from "framer-motion";
  import Image from "next/image"
 import { useState } from "react";
+import useStore from "../store";
 export default function Skills() {
+  const localTheme = useStore((state) => state.theme);
 
 
   return (
     <>
       <ul
      
-       className="flex flex-col  justify-center items-center text-white font-bold gap-6 ">
+       className="flex flex-col  justify-center items-center  font-bold gap-6 "
+       style={{color : localTheme.foreground}}
+       >
         <motion.div
         initial={{ x: '-100vw' }}  // Start from off-screen right
         animate={{ x: '100vw' }}  // Move off-screen left

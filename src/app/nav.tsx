@@ -13,16 +13,16 @@ export default function Nav() {
     const handleMoodChange = () => {
         const colorThemes = [
          
-            { foreground: '#F5F5F5', background: '#1C1B1B' }, // black
-            { foreground: '#FFFFBF', background: '#1D1D00' }, // Yellow
-            { foreground: '#BFFFD5', background: '#001819' }, // Green
-            { foreground: '#FAC3FF', background: '#11010E' }, // Red
-            { foreground: '#CCCCFF', background: '#030B25' }, // Blue
-            { foreground: '#1C1B1B', background: '#F5F5F5' }, // white
-            { foreground: '#1D1D00', background: '#FFFFBF' }, // YellowDark
-            { foreground: '#001819', background: '#BFFFD5' }, // GreenDark
-            { foreground: '#11010E', background: '#FAC3FF' }, // RedDark
-            { foreground: '#030B25', background: '#CCCCFF' }, // BlueDark
+            { foreground: '#F5F5F5', background: '#1C1B1B' ,dark:true  }, // black
+            { foreground: '#FFFFBF', background: '#1D1D00' ,dark:true  }, // Yellow
+            { foreground: '#BFFFD5', background: '#001819' ,dark:true  }, // Green
+            { foreground: '#FAC3FF', background: '#11010E' ,dark:true }, // Red
+            { foreground: '#CCCCFF', background: '#030B25' ,dark:true }, // Blue
+            { foreground: '#1C1B1B', background: '#F5F5F5',dark:false }, // white
+            { foreground: '#1D1D00', background: '#FFFFBF', dark:false }, // YellowDark
+            { foreground: '#001819', background: '#BFFFD5', dark:false}, // GreenDark
+            { foreground: '#11010E', background: '#FAC3FF', dark:false }, // RedDark
+            { foreground: '#030B25', background: '#CCCCFF', dark:false }, // BlueDark
           // Add more themes as needed
         ];
       
@@ -30,10 +30,10 @@ export default function Nav() {
         const newMoodIndex = (moodIndex + 1) % colorThemes.length;
       
         // Then use the new index to get the theme
-        const { foreground, background } = colorThemes[newMoodIndex];
+        const { foreground, background ,dark } = colorThemes[newMoodIndex];
       
         // Update the theme in state and localStorage
-        const currentTheme = { foreground, background };
+        const currentTheme = { foreground, background,dark };
         setTheme(currentTheme);
 
       
@@ -45,12 +45,13 @@ export default function Nav() {
         <>
         
 
-            <nav className={`w-full overflow-hidden sticky top-0 bg-[#282828] left-0  z-50  h-20   bg-opacity-90`}
+            <nav className={`w-full overflow-hidden sticky top-0  left-0  z-50  h-20   bg-opacity-50`}
+                style={{ backgroundColor: theme.background , color: theme.foreground }}
             >
                 <div className="flex justify-between items-center w-full  ">
 
 
-                    <div id="logo" className="w-28 h-full p-4 ">
+                    <div id="logo" className={`w-28 h-full p-4 ${!theme.dark? ' invert':'invert-0'}`}>
                         <svg className="" width="120" height="60" viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.40649 1C1.87982 1 0.910717 2.63992 1.64603 3.97783C6.03127 11.9569 17.8115 33.7051 20 41C22.1687 48.2289 34.4016 137.391 39.1323 172.204C39.4436 174.495 42.7492 174.471 43.0961 172.185L62.972 41.1845C62.9906 41.0618 63.0206 40.941 63.0617 40.8238L76.0688 3.6607C76.5239 2.36035 75.5587 1 74.181 1H3.40649Z"
                                 fill="#FFFFFF" />

@@ -2,15 +2,21 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import TypingEffect from "./TypingEffect";
+import useStore from "../store";
 
 
 export default function AboutMe() {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const localTheme = useStore((state) => state.theme);
 
   return (
     <div
-      className="flex-row justify-center text-white w-screen overflow-hidden"
+      className="flex-row justify-center w-screen overflow-hidden"
+      style={
+        {
+          color: localTheme.foreground}
+      }
       
     >
        <span className=" relative left-4 md:left-10 text-xs">26.january.1996</span>
@@ -22,7 +28,9 @@ export default function AboutMe() {
         ref={ref}
        className="flex flex-row justify-center md:justify-start items-center w-full">
        
-        <div className="w-full md:w-6/6 !text-2xl md:!text-3xl p-4 md:p-10 glitch-container leading-8">
+        <div className="w-full md:w-6/6 !text-2xl md:!text-3xl p-4 md:p-10 glitch-container leading-8"
+        style={{color: localTheme.foreground}}
+        >
         <TypingEffect text="Heyy I'm Moses KM" /> <br />
 
         <motion.p
