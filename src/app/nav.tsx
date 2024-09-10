@@ -1,10 +1,52 @@
+'use client';
 import Btn from "./components/Btn";
 import { LuSunMoon } from "react-icons/lu";
-
+import { motion } from "framer-motion";
+import { useState } from "react";
+import {Theme} from "../typs";
+import { useStore } from "./store";
 export default function Nav() {
+    const {theme, setTheme} = useStore();
+    const [moodIndex, setMoodIndex] = useState(0);
+
+    
+    const handleMoodChange = () => {
+        const colorThemes = [
+         
+            { foreground: '#F5F5F5', background: '#1C1B1B' }, // black
+            { foreground: '#FFFFBF', background: '#1D1D00' }, // Yellow
+            { foreground: '#BFFFD5', background: '#001819' }, // Green
+            { foreground: '#FAC3FF', background: '#11010E' }, // Red
+            { foreground: '#CCCCFF', background: '#030B25' }, // Blue
+            { foreground: '#1C1B1B', background: '#F5F5F5' }, // white
+            { foreground: '#1D1D00', background: '#FFFFBF' }, // YellowDark
+            { foreground: '#001819', background: '#BFFFD5' }, // GreenDark
+            { foreground: '#11010E', background: '#FAC3FF' }, // RedDark
+            { foreground: '#030B25', background: '#CCCCFF' }, // BlueDark
+          // Add more themes as needed
+        ];
+      
+        // Calculate the new mood index first
+        const newMoodIndex = (moodIndex + 1) % colorThemes.length;
+      
+        // Then use the new index to get the theme
+        const { foreground, background } = colorThemes[newMoodIndex];
+      
+        // Update the theme in state and localStorage
+        const currentTheme = { foreground, background };
+        setTheme(currentTheme);
+
+      
+        // Update the state with the new mood index
+        setMoodIndex(newMoodIndex);
+      };
+     
     return (
         <>
-            <nav className="w-full overflow-hidden sticky top-0 left-0  z-50  h-20  bg-[#282828] bg-opacity-90">
+        
+
+            <nav className={`w-full overflow-hidden sticky top-0 bg-[#282828] left-0  z-50  h-20   bg-opacity-90`}
+            >
                 <div className="flex justify-between items-center w-full  ">
 
 
@@ -28,16 +70,54 @@ export default function Nav() {
 
                     </div>
                     <div id="mood" className="flex justify-center items-center gap-2 md:gap-4 mr-4">
-                        <button className="bg-white rounded-full h-4 w-4 "></button>
-                        <LuSunMoon size={26} className="text-white hover:scale-125 " />
-                        <Btn text={'Mood'} />
+                        <button
+                        
+                         className=" rounded-full h-4 w-4 "
+                            style={{  background: theme.foreground }}	
+                         ></button>
+                       
+                        <motion.button
+                            className="relative px-6 py-3 font-semibold   rounded-2xl  "
+                            style={{ backgroundColor: theme.background , color: theme.foreground }}
+                            initial="rest"
+                            whileHover="hover"
+                            animate="rest"
+                            onClick={handleMoodChange}
+                        >
+                            {/* Background animation */}
+                            <motion.span
+                                className="absolute inset-0 w-full h-full rounded-2xl"
+                                style={{ backgroundColor: theme.foreground , color: theme.background }}
+                                variants={{
+                                    rest: { width: "0%", left: "0%" },
+                                    hover: { width: "100%", left: "0%" },
+                                }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                            />
+
+
+                            <motion.span
+                                className="relative z-10"
+                                style={{ color: theme.foreground  }}
+                                variants={{
+                                    rest: { color: theme.foreground  },
+                                    hover: { color: theme.background }
+                                }}
+                                transition={{ duration: 0.15, ease: "easeInOut" }}
+                            >
+                                Mood
+                            </motion.span>
+                            
+                        </motion.button>
 
                     </div>
                     <div id="navagators" className="hidden md:block">
                         <ul className="flex justify-between items-center gap-4 w-full p-4">
                             <li>
-                                <Btn text={'Contact'} />
+                                <a className=" cursor-pointer" href="https://www.linkedin.com/in/moses-ka-mohs/">
+                                    <Btn text={'Contact'} />
 
+                                </a>
                             </li>
 
                         </ul>

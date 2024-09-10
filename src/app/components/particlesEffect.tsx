@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-
+import { useStore } from "../store";
+import { color } from "framer-motion";
 class Particle {
   x: number;
   y: number;
@@ -9,8 +10,9 @@ class Particle {
   density: number;
   size: number;
   triggered: boolean;
+  color: string;
 
-  constructor(x: number, y: number, size: number) {
+  constructor(x: number, y: number, size: number, color: string) {
     this.x = x;
     this.y = y;
     this.baseX = this.x;
@@ -18,10 +20,12 @@ class Particle {
     this.density = Math.random() * 100 + 1;
     this.size = size;
     this.triggered = false;
+    this.color = color;
+    
   }
 
   draw(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = "white";
+    ctx.fillStyle = this.color // Ensure this is correct
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -70,21 +74,20 @@ function ParticlesEffect() {
   const particlesArrayRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0, radius: 10 });
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const localTheme = useStore((state) => state.theme);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setScreenWidth(window?.innerWidth);
-        setScreenHeight(window?.innerHeight);
-      };
+    const handleResize = () => {
+      setScreenWidth(window?.innerWidth);
+      setScreenHeight(window?.innerHeight);
+    };
 
-      handleResize(); // Initial setting
-      window.addEventListener("resize", handleResize);
+    handleResize(); // Initial setting
+    window.addEventListener("resize", handleResize);
 
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -96,11 +99,9 @@ function ParticlesEffect() {
         screenWidth < screenHeight && screenWidth >= 768 && screenWidth <= 1024;
 
       if (isTabletPortrait) {
-        // Tablet in portrait mode: use width-based height
         canvas.width = screenWidth;
         canvas.height = 620;
       } else {
-        // Phone or other devices: use both width and height
         canvas.width = screenWidth;
         canvas.height = 500;
       }
@@ -115,7 +116,7 @@ function ParticlesEffect() {
         const particleSize = screenWidth > 768 ? 3 : 2;
         const lineSpacing = screenWidth > 768 ? 0.14 : 0.08;
 
-        ctx.fillStyle = "white";
+        ctx.fillStyle = localTheme.foreground;
         ctx.font = `${calculatedFontSize}px sans-serif`;
 
         const positions = [
@@ -143,7 +144,7 @@ function ParticlesEffect() {
                 const positionX = x;
                 const positionY = y;
                 particlesArrayRef.current.push(
-                  new Particle(positionX, positionY, particleSize)
+                  new Particle(positionX, positionY, particleSize, localTheme.foreground) // Pass the color from the store
                 );
               }
             }
@@ -167,9 +168,8 @@ function ParticlesEffect() {
 
       drawTextAndParticles();
       animate();
-
     }
-  }, [screenWidth, screenHeight]);
+  }, [screenWidth, screenHeight, localTheme.foreground]); // Add localTheme.foreground as a dependency
 
   const handleInteraction = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (screenWidth && screenWidth < 768) {
@@ -217,5 +217,6 @@ function ParticlesEffect() {
     ></canvas>
   );
 }
+
 
 export default ParticlesEffect;

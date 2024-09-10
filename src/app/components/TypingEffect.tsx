@@ -31,7 +31,6 @@ const TypingEffect = (props: TypingEffectProps) => {
       clearInterval(typingInterval);
     };
   }, [currentIndex,animate]);
-    console.log(isInView,'this is inview')
   return (
     <div className="typeEffect">
       <motion.p 
