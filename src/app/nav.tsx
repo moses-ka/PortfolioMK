@@ -11,14 +11,12 @@ export default function Nav() {
         const colorThemes = [
          
             { foreground: '#F5F5F5', background: '#1C1B1B' ,dark:true  }, // black
-            { foreground: '#FFFFBF', background: '#1D1D00' ,dark:true  }, // Yellow
+           
             { foreground: '#BFFFD5', background: '#001819' ,dark:true  }, // Green
             { foreground: '#FAC3FF', background: '#11010E' ,dark:true }, // Red
-            { foreground: '#CCCCFF', background: '#030B25' ,dark:true }, // Blue
             { foreground: '#1C1B1B', background: '#F5F5F5',dark:false }, // white
-            { foreground: '#1D1D00', background: '#FFFFBF', dark:false }, // YellowDark
+           
             { foreground: '#001819', background: '#BFFFD5', dark:false}, // GreenDark
-            { foreground: '#11010E', background: '#FAC3FF', dark:false }, // RedDark
             { foreground: '#030B25', background: '#CCCCFF', dark:false }, // BlueDark
           // Add more themes as needed
         ];
@@ -76,7 +74,7 @@ export default function Nav() {
                        
                         <motion.button
                             className="relative px-6 py-3 font-semibold   rounded-2xl  "
-                            style={{ backgroundColor: theme.background , color: theme.foreground }}
+                            style={{ backgroundColor: theme.background , color: theme?.foreground }}
                             initial="rest"
                             whileHover="hover"
                             animate="rest"
@@ -85,7 +83,7 @@ export default function Nav() {
                             {/* Background animation */}
                             <motion.span
                                 className="absolute inset-0 w-full h-full rounded-2xl"
-                                style={{ backgroundColor: theme.foreground , color: theme.background }}
+                                style={{ backgroundColor: theme?.foreground , color: theme.background }}
                                 variants={{
                                     rest: { width: "0%", left: "0%" },
                                     hover: { width: "100%", left: "0%" },
@@ -95,13 +93,13 @@ export default function Nav() {
 
 
                             <motion.span
-                                className="relative z-10"
+                                className="relative z-10  "
                                 style={{ color: theme.foreground  }}
                                 variants={{
                                     rest: { color: theme.foreground  },
                                     hover: { color: theme.background }
                                 }}
-                                transition={{ duration: 0.15, ease: "easeInOut" }}
+                                transition={{ duration: 0.10, ease: "easeInOut" }}
                             >
                                 Mood
                             </motion.span>
@@ -115,11 +113,13 @@ export default function Nav() {
                                 <a className=" cursor-pointer" href="https://www.linkedin.com/in/moses-ka-mohs/">
                                    
                                 <motion.button
-                            className="relative px-6 py-3 font-semibold   rounded-2xl  "
+                            className="relative px-6 py-3 font-semibold   cursor-pointer  rounded-2xl  "
                             style={{ backgroundColor: theme.background , color: theme.foreground }}
+                            variants={{
+                                rest: { color: theme.foreground  },
+                                hover: { color: theme.background }
+                            }}
                             initial="rest"
-                            whileHover="hover"
-                            animate="rest"
                             onClick={handleMoodChange}
                         >
                             {/* Background animation */}
@@ -131,17 +131,15 @@ export default function Nav() {
                                     hover: { width: "100%", left: "0%" },
                                 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
+                                
                             />
 
 
                             <motion.span
                                 className="relative z-10"
                                 style={{ color: theme.foreground  }}
-                                variants={{
-                                    rest: { color: theme.foreground  },
-                                    hover: { color: theme.background }
-                                }}
-                                transition={{ duration: 0.15, ease: "easeInOut" }}
+                                
+                                transition={{ duration: 0.10, ease: "easeInOut" }}
                             >
                                 Contact
                             </motion.span>

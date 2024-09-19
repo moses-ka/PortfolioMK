@@ -107,7 +107,7 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative left-24 top-32 md:top-32 md:left-44 z-50"
+          className="relative left-24 top-36 md:top-32 md:left-44 z-40"
         >
           <Image
             width={100}
@@ -120,16 +120,19 @@ export default function Projects() {
         <motion.div
           initial={{ x: '-100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
-          transition={{ duration: 1 }}
-          className="relative top-12 right-20 md:top-10 md:right-44 z-50"
+          transition={{ duration: 1 ,postion: 'absolute'}}
+          className="relative top-12 right-20 md:top-10 md:right-44 z-50 "
         >
          
           
           <Image
           
-            width={100}
-            height={100}
-            className={`${localTheme.dark? "invert":'invert-0'}`}
+            width={120}
+            height={1020}
+            style={{
+              zIndex : 10
+            }}
+            className={`${localTheme.dark? "invert":'invert-0'} `}
             alt="Django Logo"
             src="https://img.icons8.com/?size=100&id=mUBILbYvUMq8&format=png&color=000000"
           />

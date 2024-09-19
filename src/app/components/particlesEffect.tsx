@@ -25,7 +25,7 @@ class Particle {
   }
 
   draw(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = this.color // Ensure this is correct
+    ctx.fillStyle = this.color 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -110,8 +110,7 @@ function ParticlesEffect() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         const calculatedFontSize = Math.max(
-          Math.min(screenWidth / 10, 80),
-          16
+          Math.min(screenWidth / 16, 60), 10
         );
         const particleSize = screenWidth > 768 ? 3 : 2;
         const lineSpacing = screenWidth > 768 ? 0.14 : 0.08;
@@ -120,12 +119,12 @@ function ParticlesEffect() {
         ctx.font = `${calculatedFontSize}px sans-serif`;
 
         const positions = [
-          { text: "Elevating Digital", x: screenWidth * 0.12, y: canvas.height * 0.2 },
-          { text: "Experiences", x: screenWidth * 0.4, y: canvas.height * (0.2 + lineSpacing) },
-          { text: "Skillfully Crafted", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
-          { text: "by a Creative", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
-          { text: "Web Developer", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
-          { text: "And Designer", x: screenWidth * 0.32, y: canvas.height * (0.2 + 5 * lineSpacing) },
+          { text: "Crafting Elevated User ", x: screenWidth * 0.12, y: canvas.height * 0.2 },
+          { text: " Experiences of Innovative", x: screenWidth * 0.2, y: canvas.height * (0.2 + lineSpacing) },
+          { text: "with a Perfect Balance,", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
+          { text: "of Innovative Design", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
+          { text: " and Clean Code,", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
+          { text: "Check it Out ", x: screenWidth * 0.32, y: canvas.height * (0.2 + 5 * lineSpacing) },
         ];
 
         positions.forEach(({ text, x, y }) => {
