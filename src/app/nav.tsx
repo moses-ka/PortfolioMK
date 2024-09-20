@@ -110,7 +110,7 @@ export default function Nav() {
                     <div id="navagators" className="hidden md:block">
                         <ul className="flex justify-between items-center gap-4 w-full p-4">
                             <li>
-                                <a className=" cursor-pointer" href="https://www.linkedin.com/in/moses-ka-mohs/">
+                                <a className=" cursor-pointer" target="_blank" href="https://www.linkedin.com/in/moses-ka-mohs/">
                                    
                                 <motion.button
                             className="relative px-6 py-3 font-semibold   cursor-pointer  rounded-2xl  "
