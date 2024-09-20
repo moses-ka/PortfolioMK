@@ -66,12 +66,9 @@ export default function Nav() {
 
                     </div>
                     <div id="mood" className="flex justify-center items-center gap-2 md:gap-4 mr-4">
-                        <button
                         
-                         className=" rounded-full h-4 w-4 "
-                            style={{  background: theme.foreground }}	
-                         ></button>
-                       
+                        <div className="group flex flex-col items-center justify-start h-full">
+
                         <motion.button
                             className="relative px-6 py-3 font-semibold   rounded-2xl  "
                             style={{ backgroundColor: theme.background , color: theme?.foreground }}
@@ -79,38 +76,22 @@ export default function Nav() {
                             whileHover="hover"
                             animate="rest"
                             onClick={handleMoodChange}
-                        >
-                            {/* Background animation */}
-                            <motion.span
-                                className="absolute inset-0 w-full h-full rounded-2xl"
-                                style={{ backgroundColor: theme?.foreground , color: theme.background }}
-                                variants={{
-                                    rest: { width: "0%", left: "0%" },
-                                    hover: { width: "100%", left: "0%" },
-                                }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                            />
-
-
-                            <motion.span
-                                className="relative z-10  "
-                                style={{ color: theme.foreground  }}
-                                variants={{
-                                    rest: { color: theme.foreground  },
-                                    hover: { color: theme.background }
-                                }}
-                                transition={{ duration: 0.10, ease: "easeInOut" }}
                             >
-                                Mood
-                            </motion.span>
+                          
+
+
+                            Mood
                             
                         </motion.button>
+                        <hr className={`w-2 h-2 rounded-full  group-hover:w-10 transition-all  duration-75  `}
+                        color={theme.foreground} />
+                        </div>
 
                     </div>
                     <div id="navagators" className="hidden md:block">
                         <ul className="flex justify-between items-center gap-4 w-full p-4">
                             <li>
-                                <a className=" cursor-pointer" target="_blank" href="https://www.linkedin.com/in/moses-ka-mohs/">
+                                <a className=" flex flex-col justify-center items-center group cursor-pointer" target="_blank" href="https://www.linkedin.com/in/moses-ka-mohs/">
                                    
                                 <motion.button
                             className="relative px-6 py-3 font-semibold   cursor-pointer  rounded-2xl  "
@@ -120,6 +101,8 @@ export default function Nav() {
                         >
                             Contact
                         </motion.button>
+                        <hr className={`w-2 h-2 rounded-full  group-hover:w-10 transition-all  duration-75  `}
+                        color={theme.foreground} />
                                 </a>
                             </li>
 
