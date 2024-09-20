@@ -110,21 +110,21 @@ function ParticlesEffect() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         const calculatedFontSize = Math.max(
-          Math.min(screenWidth / 16, 60), 10
+          Math.min(screenWidth / 20, 60), 20
         );
-        const particleSize = screenWidth > 768 ? 3 : 2;
+        const particleSize = screenWidth > 768 ? 3 : 1;
         const lineSpacing = screenWidth > 768 ? 0.14 : 0.08;
 
         ctx.fillStyle = localTheme.foreground;
         ctx.font = `${calculatedFontSize}px sans-serif`;
 
         const positions = [
-          { text: "Crafting Elevated User ", x: screenWidth * 0.12, y: canvas.height * 0.2 },
-          { text: " Experiences of Innovative", x: screenWidth * 0.2, y: canvas.height * (0.2 + lineSpacing) },
-          { text: "with a Perfect Balance,", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
-          { text: "of Innovative Design", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
-          { text: " and Clean Code,", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
-          { text: "Check it Out ", x: screenWidth * 0.32, y: canvas.height * (0.2 + 5 * lineSpacing) },
+          { text: "Design That Speaks,", x: screenWidth * 0.12, y: canvas.height * 0.2 },
+          { text: " Code That Works.", x: screenWidth * 0.4, y: canvas.height * (0.2 + lineSpacing) },
+          { text: " Behind Every Great Experience", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
+          { text: " Is a Story Waiting to Unfold. ", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
+          { text: "Scroll Down to Discover ", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
+          { text: "the Details Behind My Creations.", x: screenWidth * 0.22, y: canvas.height * (0.2 + 5 * lineSpacing) },
         ];
 
         positions.forEach(({ text, x, y }) => {

@@ -34,7 +34,7 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-          className="relative top-32 right-24 md:top-32 md:right-44 z-50"
+          className="relative top-32 right-24 md:top-32 md:right-44 z-40"
         >
           <Image
             width={100}
@@ -48,10 +48,10 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView1 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative top-10 left-24 md:top-10 md:left-44 z-50"
+          className="relative top-10 left-24 md:top-10 md:left-44 z-40"
         >
           <Image
-           className={localTheme.dark? "invert !max-w-[80px] !max-h-[80px] index-z-10 ": "!max-w-[340px] !max-h-[100px] index-z-10" }
+           className={localTheme.dark? "invert !max-w-[80px] !max-h-[80px] index-z-40 ": "!max-w-[340px] !max-h-[100px] index-z-10" }
             width={100}
             height={100}
             
@@ -121,7 +121,7 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative top-12 right-20 md:top-12 md:right-44 z-50 "
+          className="relative top-12 right-20 md:top-12 md:right-44 z-40 "
         >
          
           
