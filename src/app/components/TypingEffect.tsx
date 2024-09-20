@@ -38,7 +38,7 @@ const TypingEffect = (props: TypingEffectProps) => {
         animate={{ opacity: isInView ? 1 : 0 }}
         transition={{ duration: 3 }}
        ref={ref}
-        className=" text-2xl md:text-4xl   "
+        className=" !text-2xl md:!text-4xl   "
         >{typedText}</motion.p>
     </div>
   );

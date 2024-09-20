@@ -7,7 +7,7 @@ export default function lLoadingAnimation() {
         <div className=' h-screen grid place-items-center'>
 
 
-        <svg className="" width="400" height="200" viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className=" h-80 w-1/2 md:h-96 md:w-full"  viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <motion.path 
                             initial={{opacity: 0}}
                             animate={{opacity: 1}}
