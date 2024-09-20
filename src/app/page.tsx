@@ -6,7 +6,7 @@ import Projects from "./components/Projects";
 import ThemeStore from "./store";
 import { useEffect, useState } from "react";
 import LoadingAnimation from "./loadingAnimation";
-export default function page() {
+export default function Page() {
   const theme = ThemeStore((state) => state.theme);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
