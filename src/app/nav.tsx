@@ -115,35 +115,10 @@ export default function Nav() {
                                 <motion.button
                             className="relative px-6 py-3 font-semibold   cursor-pointer  rounded-2xl  "
                             style={{ backgroundColor: theme.background , color: theme.foreground }}
-                            variants={{
-                                rest: { color: theme.foreground  },
-                                hover: { color: theme.background }
-                            }}
-                            initial="rest"
-                            onClick={handleMoodChange}
-                        >
-                            {/* Background animation */}
-                            <motion.span
-                                className="absolute inset-0 w-full h-full rounded-2xl"
-                                style={{ backgroundColor: theme.foreground , color: theme.background }}
-                                variants={{
-                                    rest: { width: "0%", left: "0%" },
-                                    hover: { width: "100%", left: "0%" },
-                                }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                
-                            />
-
-
-                            <motion.span
-                                className="relative z-10"
-                                style={{ color: theme.foreground  }}
-                                
-                                transition={{ duration: 0.10, ease: "easeInOut" }}
-                            >
-                                Contact
-                            </motion.span>
                             
+                        
+                        >
+                            Contact
                         </motion.button>
                                 </a>
                             </li>

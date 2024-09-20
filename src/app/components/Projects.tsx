@@ -34,12 +34,12 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-          className="relative top-36 right-24 md:top-36 md:right-44 z-50"
+          className="relative top-32 right-24 md:top-32 md:right-44 z-50"
         >
           <Image
             width={100}
             height={100}
-            className="!max-w-[340px] !max-h-[100px]"
+            className="!max-w-[80px] !max-h-[80px]"
             alt="Figma Logo"
             src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000"
           />
@@ -51,7 +51,7 @@ export default function Projects() {
           className="relative top-10 left-24 md:top-10 md:left-44 z-50"
         >
           <Image
-           className={localTheme.dark? "invert !max-w-[340px] !max-h-[100px] index-z-10 ": "!max-w-[340px] !max-h-[100px] index-z-10" }
+           className={localTheme.dark? "invert !max-w-[80px] !max-h-[80px] index-z-10 ": "!max-w-[340px] !max-h-[100px] index-z-10" }
             width={100}
             height={100}
             
@@ -81,7 +81,7 @@ export default function Projects() {
 
           <svg 
           style={{fill: localTheme.background}}
-           xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 24 24">
+           xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
         </div>
@@ -107,12 +107,12 @@ export default function Projects() {
           initial={{ x: '-100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative left-24 top-36 md:top-32 md:left-44 z-40"
+          className="relative left-24 top-32 md:top-32 md:left-44 z-40"
         >
           <Image
             width={100}
             height={100}
-            className="!max-w-[340px] !max-h-[100px] index-10"
+            className="!max-w-[80px] !max-h-[80px] index-10"
             alt="TypeScript Logo"
             src="https://img.icons8.com/?size=100&id=wpZmKzk11AzJ&format=png&color=000000"
           />
@@ -120,8 +120,8 @@ export default function Projects() {
         <motion.div
           initial={{ x: '-100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
-          transition={{ duration: 1 ,postion: 'absolute'}}
-          className="relative top-12 right-20 md:top-10 md:right-44 z-50 "
+          transition={{ duration: 1 }}
+          className="relative top-12 right-20 md:top-12 md:right-44 z-50 "
         >
          
           
@@ -132,9 +132,9 @@ export default function Projects() {
             style={{
               zIndex : 10
             }}
-            className={`${localTheme.dark? "invert":'invert-0'} `}
-            alt="Django Logo"
-            src="https://img.icons8.com/?size=100&id=mUBILbYvUMq8&format=png&color=000000"
+            className={` relative max-w-[80px] max-h-[80px] `}
+            alt="Python Logo"
+            src="https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000"
           />
         
         </motion.div>
@@ -159,7 +159,7 @@ export default function Projects() {
         >
           <svg 
           style={{fill: localTheme.background}}
-           xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 24 24">
+           xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
         </div>

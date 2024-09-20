@@ -49,7 +49,10 @@ export default function AboutMe() {
         transition={{ duration: 5 }}
          className="">I’m excited about the prospect of bringing my unique blend of art and development to create exceptional final products.</motion.p> 
         <br />
+        <a href="">
+
         <TypingEffect duration={160} text="Let’s team up for a project !"/>
+        </a>
     </div>
 
         </motion.div>
