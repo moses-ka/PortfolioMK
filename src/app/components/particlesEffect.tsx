@@ -110,21 +110,21 @@ function ParticlesEffect() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         const calculatedFontSize = Math.max(
-          Math.min(screenWidth / 20, 60), 20
+          Math.min(screenWidth / 20, 80), 20  // Adjust the font size here first is for desktop and second is for mobile
         );
-        const particleSize = screenWidth > 768 ? 3 : 1;
-        const lineSpacing = screenWidth > 768 ? 0.14 : 0.08;
+        const particleSize = screenWidth > 768 ? 2.8 : 1;
+        const lineSpacing = screenWidth > 768 ? 0.14 : 0.06;
 
         ctx.fillStyle = localTheme.foreground;
         ctx.font = `${calculatedFontSize}px sans-serif`;
 
         const positions = [
           { text: "Design That Speaks,", x: screenWidth * 0.12, y: canvas.height * 0.2 },
-          { text: " Code That Works.", x: screenWidth * 0.4, y: canvas.height * (0.2 + lineSpacing) },
-          { text: " Behind Every Great Experience", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
-          { text: " Is a Story Waiting to Unfold. ", x: screenWidth * 0.3, y: canvas.height * (0.2 + 3 * lineSpacing) },
-          { text: "Scroll Down to Discover ", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
-          { text: "the Details Behind My Creations.", x: screenWidth * 0.22, y: canvas.height * (0.2 + 5 * lineSpacing) },
+          { text: "Code That Works", x: screenWidth * 0.4, y: canvas.height * (0.2 + lineSpacing) },
+          { text: "Behind Every Great Experience", x: screenWidth * 0.03, y: canvas.height * (0.2 + 2 * lineSpacing) },
+          { text: "Is a Story Waiting to Unfold ", x: screenWidth * 0.20, y: canvas.height * (0.2 + 3 * lineSpacing) },
+          { text: "Scroll Down to Discover the Details ", x: screenWidth * 0.1, y: canvas.height * (0.2 + 4 * lineSpacing) },
+          { text: "Behind My Creations", x: screenWidth * 0.22, y: canvas.height * (0.2 + 5 * lineSpacing) },
         ];
 
         positions.forEach(({ text, x, y }) => {
@@ -154,7 +154,7 @@ function ParticlesEffect() {
       };
 
       const animate = () => {
-        const divisor = screenWidth < 768 ? 60 : 20;
+        const divisor = screenWidth > 768 ? 30 : 100;
         if (ctx) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           particlesArrayRef.current.forEach((particle) => {
@@ -168,7 +168,7 @@ function ParticlesEffect() {
       drawTextAndParticles();
       animate();
     }
-  }, [screenWidth, screenHeight, localTheme.foreground]); // Add localTheme.foreground as a dependency
+  }, [screenWidth, screenHeight, localTheme.foreground]); 
 
   const handleInteraction = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (screenWidth && screenWidth < 768) {
@@ -177,7 +177,7 @@ function ParticlesEffect() {
         mouseRef.current = {
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
-          radius: 40,
+          radius: 30,
         };
       }
       particlesArrayRef.current.forEach((p) => (p.triggered = true));
@@ -199,7 +199,7 @@ function ParticlesEffect() {
         mouseRef.current = {
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
-          radius: 60,
+          radius: 70,
         };
       }
       particlesArrayRef.current.forEach((p) => (p.triggered = true));

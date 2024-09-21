@@ -28,7 +28,7 @@ export default function AboutMe() {
         ref={ref}
        className="flex flex-row justify-center md:justify-start items-center w-full">
        
-        <div className="w-full md:w-6/6 !text-2xl md:!text-3xl p-4 md:p-10 glitch-container leading-8"
+        <div className="w-full md:w-6/6 !text-xl md:!text-3xl p-4 md:p-10  leading-8"
         style={{color: localTheme.foreground}}
         >
         <TypingEffect text="Heyy I'm Moses KM" /> <br />
