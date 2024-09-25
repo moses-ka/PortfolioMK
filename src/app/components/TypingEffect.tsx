@@ -1,45 +1,48 @@
 'use client';
-import  { useState, useEffect,useRef } from 'react';
-import { useInView,motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { useInView, motion } from 'framer-motion';
 
 type TypingEffectProps = {
   text: string;
-  duration ?: number;
+  duration?: number;
 };
 
 const TypingEffect = (props: TypingEffectProps) => {
-  const { text,duration } = props;
-  const textToType = text
+  const { text, duration } = props;
+  const textToType = text;
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [animate, setAnimate] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  
   useEffect(() => {
+    if (!isInView) return; // Don't run if the element is not in view
+
     const typingInterval = setInterval(() => {
-      if (currentIndex < text.length) {
+      if (currentIndex < textToType.length) {
         setTypedText((prevText) => prevText + textToType[currentIndex]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
       } else {
-        clearInterval(typingInterval);
+        clearInterval(typingInterval); // Clear interval once done typing
       }
-    }, duration? duration:100); // Adjust typing speed as needed
+    }, duration ? duration : 100); // Adjust typing speed as needed
 
     return () => {
-      clearInterval(typingInterval);
+      clearInterval(typingInterval); // Ensure interval cleanup
     };
-  }, [currentIndex,animate]);
+  }, [currentIndex, textToType, isInView, duration]); // Add dependencies for proper re-render
+
   return (
     <div className="typeEffect">
-      <motion.p 
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: isInView ? 1 : 0 }}
         transition={{ duration: 3 }}
-       ref={ref}
-        className=" !text-2xl md:!text-4xl   "
-        >{typedText}</motion.p>
+        ref={ref}
+        className="!text-2xl md:!text-4xl"
+      >
+        {typedText}
+      </motion.p>
     </div>
   );
 };

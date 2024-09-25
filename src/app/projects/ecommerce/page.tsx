@@ -1,7 +1,7 @@
 export default async function Page() {
   return (
     <main>
-      <h1>Ecommerce</h1>
+      <h1 className="text-white">Ecommerce Project</h1>
     </main>
   );
 }

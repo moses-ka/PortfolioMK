@@ -51,7 +51,7 @@ export default function AboutMe() {
         <br />
         <a target="_blank"  href="https://www.linkedin.com/in/moses-ka-mohs/">
 
-        <TypingEffect duration={160} text="Let’s team up for a project !"/>
+        <TypingEffect duration={100} text="Let’s team up for a project !"/>
         </a>
     </div>
 

@@ -1,13 +1,17 @@
 'use client'
 import  {motion} from 'framer-motion'
+import TypingEffect from './components/TypingEffect'
 
 export default function lLoadingAnimation() {
   return (
     <div className=' sticky top-0 left-0 h-screen w-full z-50 bg-[#1C1B1B]'>
         <div className=' h-screen grid place-items-center'>
 
+                        <div className='text-3xl  text-white'>
 
-        <svg className=" h-80 w-1/2 md:h-96 md:w-full"  viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <TypingEffect duration={3} text="Project. 1" />
+                        </div>
+        <svg className=" h-80 w-1/2 md:h-96 md:w-1/2"  viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <motion.path 
                             initial={{opacity: 0}}
                             animate={{opacity: 1}}
@@ -52,6 +56,7 @@ export default function lLoadingAnimation() {
                             d="M313.642 140.381C312.908 141.724 313.888 143.366 315.419 143.36C322.867 143.33 340.473 143.407 347.753 144.691C354.417 145.868 387.733 156.484 406.344 162.493C408.529 163.198 410.064 160.164 408.215 158.804C396.056 149.864 375.973 134.67 360.702 120.999C353.336 114.404 343.787 103.136 339.788 98.3072C338.879 97.2094 337.146 97.3753 336.462 98.6259L313.642 140.381Z"
                                 fill="#FFFFFF" />
                         </svg>
+                        
                             </div>
     </div>
   )

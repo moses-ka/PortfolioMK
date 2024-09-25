@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import project2 from '../../assets/project2.png';
 import project from '../../assets/project.png';
 import { motion, useInView } from 'framer-motion';
@@ -29,7 +30,9 @@ export default function Projects() {
 
   return (
     <div id="projects list" className="flex flex-col justify-center items-center w-full h-auto p-4">
+        <Link href="/projects/flex">
       <div ref={ref1} id="project1" className="flex flex-col justify-center items-center w-full p-4">
+          
         <motion.div
           initial={{ x: '-100vw' }}
           animate={{ x: isInView1 ? 0 : -1000 }}
@@ -48,13 +51,13 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView1 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative top-10 left-24 md:top-10 md:left-44 z-40"
+          className="relative top-10 left-24 md:top-12 md:left-44 z-40"
         >
           <Image
-           className={localTheme.dark? "invert !max-w-[80px] !max-h-[80px] index-z-40 ": "!max-w-[340px] !max-h-[100px] index-z-10" }
+            className={localTheme.dark ? "invert !max-w-[80px] !max-h-[80px] index-z-40 " : "!max-w-[80px] !max-h-[80px] index-z-10"}
             width={100}
             height={100}
-            
+
             alt="Next JS Skill Logo"
             src="https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000"
           />
@@ -73,15 +76,15 @@ export default function Projects() {
             priority
           />
         </motion.div>
-        <div className="relative bottom-12 right-36 z-20 md:bottom-10 md:right-96 bg-white animate-bounce 
+        <div className="relative bottom-12 right-32 z-20 md:bottom-10 md:right-96 bg-white animate-bounce 
         rounded-xl"
-        style={
-          {backgroundColor: localTheme.foreground}
-        }>
+          style={
+            { backgroundColor: localTheme.foreground }
+          }>
 
-          <svg 
-          style={{fill: localTheme.background}}
-           xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
+          <svg
+            style={{ fill: localTheme.background }}
+            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
         </div>
@@ -89,11 +92,11 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView1 ? 0 : -1000 }}
           transition={{ duration: 1 }}
-          className="relative left-68 bottom-32 md:left-56 md:bottom-44 h-46 w-64  rounded-3xl"
+          className="relative left-3 bottom-32 md:left-56 md:bottom-44 h-46 w-64  rounded-3xl drop-shadow-md"
           style={{ backgroundColor: localTheme.foreground }}
         >
           <p className=" p-4 md:text-base text-xs"
-          style={{ color: localTheme.background }}
+            style={{ color: localTheme.background }}
           >
             FlexPro – Your Ultimate Gym Buddy
             A fitness app built with React, MongoDB, and Node.js.
@@ -102,6 +105,8 @@ export default function Projects() {
           </p>
         </motion.div>
       </div>
+        </Link>
+      <Link href="/projects/ecommerce">
       <div id="project2" className="flex flex-col justify-center items-center w-full h-full p-4">
         <motion.div
           initial={{ x: '-100vw' }}
@@ -123,20 +128,20 @@ export default function Projects() {
           transition={{ duration: 1 }}
           className="relative top-12 right-20 md:top-12 md:right-44 z-40 "
         >
-         
-          
+
+
           <Image
-          
+
             width={120}
             height={1020}
             style={{
-              zIndex : 10
+              zIndex: 10
             }}
             className={` relative max-w-[80px] max-h-[80px] `}
             alt="Python Logo"
             src="https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000"
           />
-        
+
         </motion.div>
         <motion.div
           ref={ref2}
@@ -153,13 +158,13 @@ export default function Projects() {
             priority
           />
         </motion.div>
-        <div className="relative bottom-12 right-36 z-20 md:bottom-10 md:right-96  animate-bounce 
+        <div className="relative bottom-12 right-32 z-20 md:bottom-10 md:right-96  animate-bounce 
         rounded-xl"
-        style={{backgroundColor: localTheme.foreground}}
+          style={{ backgroundColor: localTheme.foreground }}
         >
-          <svg 
-          style={{fill: localTheme.background}}
-           xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
+          <svg
+            style={{ fill: localTheme.background }}
+            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
             <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
           </svg>
         </div>
@@ -167,11 +172,11 @@ export default function Projects() {
           initial={{ x: '100vw' }}
           animate={{ x: isInView2 ? 0 : 1000 }}
           transition={{ duration: 1 }}
-          className="relative left-62 bottom-32 md:left-56 md:bottom-44 h-46 w-64  rounded-3xl"
+          className="relative left-3 bottom-32 md:left-56 md:bottom-44 h-46 w-64  rounded-3xl drop-shadow-md"
           style={{ backgroundColor: localTheme.foreground }}
         >
           <p className=" p-4  text-xs md:text-base"
-          style={{ color: localTheme.background }}
+            style={{ color: localTheme.background }}
           >
             Anime T-Shirt Market
             A small anime-themed T-shirt marketplace with a Django back end and TypeScript front end.
@@ -179,6 +184,7 @@ export default function Projects() {
           </p>
         </motion.div>
       </div>
+      </Link>
     </div>
   );
 }

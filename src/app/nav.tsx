@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import  ThemeStore from "./store";
+import Link from 'next/link';
 export default function Nav() {
     const {theme, setTheme} = ThemeStore();
     const [moodIndex, setMoodIndex] = useState(0);
@@ -40,12 +41,16 @@ export default function Nav() {
         <>
         
 
-            <nav className={`w-full overflow-hidden sticky top-0  left-0  z-50  h-20   bg-opacity-50`}
+            <motion.nav className={`w-full overflow-hidden sticky top-0  left-0  z-50  h-20   bg-opacity-50`}
                 style={{ backgroundColor: theme.background , color: theme.foreground }}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 2.5 ,ease: "easeInOut" ,}}
+
             >
                 <div className="flex justify-between items-center w-full  ">
 
-
+                    <Link href="/">
                     <div id="logo" className={`w-28 h-full p-4 ${!theme.dark? ' invert':'invert-0'}`}>
                         <svg className="" width="120" height="60" viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.40649 1C1.87982 1 0.910717 2.63992 1.64603 3.97783C6.03127 11.9569 17.8115 33.7051 20 41C22.1687 48.2289 34.4016 137.391 39.1323 172.204C39.4436 174.495 42.7492 174.471 43.0961 172.185L62.972 41.1845C62.9906 41.0618 63.0206 40.941 63.0617 40.8238L76.0688 3.6607C76.5239 2.36035 75.5587 1 74.181 1H3.40649Z"
@@ -65,6 +70,7 @@ export default function Nav() {
 
 
                     </div>
+                    </Link>
                     <div id="mood" className="flex justify-center items-center gap-2 md:gap-4 mr-4">
                         
                         <div className="group flex flex-col items-center justify-start h-full">
@@ -110,7 +116,7 @@ export default function Nav() {
                     </div>
 
                 </div>
-            </nav>
+            </motion.nav>
         </>
     );
 }
