@@ -43,9 +43,7 @@ export default function Nav() {
 
             <motion.nav className={`w-full overflow-hidden sticky top-0  left-0  z-50  h-20   bg-opacity-50`}
                 style={{ backgroundColor: theme.background , color: theme.foreground }}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 2.5 ,ease: "easeInOut" ,}}
+                
 
             >
                 <div className="flex justify-between items-center w-full  ">
