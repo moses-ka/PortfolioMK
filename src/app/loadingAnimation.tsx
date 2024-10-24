@@ -7,10 +7,7 @@ export default function lLoadingAnimation() {
     <div className=' sticky top-0 left-0 h-screen w-full z-50 bg-[#1C1B1B]'>
         <div className=' h-screen grid place-items-center'>
 
-                        <div className='text-3xl  text-white'>
-
-                        <TypingEffect duration={3} text="Project. 1" />
-                        </div>
+                        
         <svg className=" h-80 w-1/2 md:h-96 md:w-1/2"  viewBox="0 0 416 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <motion.path 
                             initial={{opacity: 0}}
