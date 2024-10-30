@@ -3,9 +3,23 @@ import { motion } from "framer-motion";
 import ThemeStore from "../../store";
 import Image from "next/image";
 import project2B from "../../../assets/project2.png";
+import project2small from "../../../assets/project2small.png";
+import { useEffect,useState } from "react";
 
 export default function Page() {
   const localTheme = ThemeStore((state) => state.theme);
+  const [screenWidth, setScreenWidth] = useState(0);
+  useEffect(() => {
+    // Set screen width on the client side
+    setScreenWidth(window.innerWidth);
+
+    // Optional: update on resize
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <>
       <div
@@ -32,7 +46,7 @@ export default function Page() {
               height={800}
               className="w-full h-full object-cover"
               alt="Background Image"
-              src={project2B}
+              src={screenWidth > 720 ? project2B : project2small}
             />
           </motion.div>
           <motion.div
