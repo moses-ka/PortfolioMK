@@ -4,6 +4,8 @@ import ThemeStore from "../../store";
 import Image from "next/image";
 import project2B from "../../../assets/project2.png";
 import project2small from "../../../assets/project2small.png";
+import { RiExternalLinkLine } from "react-icons/ri";
+
 import { useEffect,useState } from "react";
 
 export default function Page() {
@@ -32,12 +34,16 @@ export default function Page() {
 
         <div className="flex flex-col justify-normal items-center gap-10">
           <h1
-            className="text-4xl"
+            className="!text-3xl md:!text-4xl flex justify-center items-center gap-4"
             style={{
               color: localTheme.foreground,
             }}
           >
+            <RiExternalLinkLine />
+
+            <a href="https://ecommerce-m-k.vercel.app/">
             E-commerce Anime T-Shirt Market
+            </a>
           </h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className=" w-6/6 md:w-5/6">
