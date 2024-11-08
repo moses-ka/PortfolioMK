@@ -50,7 +50,7 @@ export default function AboutMe() {
             transition={{ duration: 5 }}
             className="">I’m excited about the prospect of bringing my unique blend of art and development to create exceptional final products.</motion.p>
           <br />
-          <div id="navagators" className="hidden md:block">
+          <div  className="">
             <ul className="flex justify-between items-center gap-4 w-full p-4">
               <li>
                 <a className=" flex flex-col justify-center items-center group cursor-pointer" target="_blank" href="https://www.linkedin.com/in/moses-ka-mohs/">
