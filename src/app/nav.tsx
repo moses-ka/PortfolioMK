@@ -88,12 +88,12 @@ export default function Nav() {
                             Mood
                             
                         </motion.button>
-                        <hr className={`w-2 h-2 rounded-full  group-hover:w-10 transition-all  duration-75  `}
+                        <hr className={`w-4/6 h-2 rounded-full  group-hover:w-2 transition-all  duration-1000  `}
                         color={theme.foreground} />
                         </div>
 
                     </div>
-                    <div id="navagators" className="hidden md:block">
+                    <div id="navagators" className="hidden md:block ">
                         <ul className="flex justify-between items-center gap-4 w-full p-4">
                             <li>
                                 <a className=" flex flex-col justify-center items-center group cursor-pointer" target="_blank" href="https://www.linkedin.com/in/moses-ka-mohs/">
@@ -106,7 +106,7 @@ export default function Nav() {
                         >
                             Contact
                         </motion.button>
-                        <hr className={`w-2 h-2 rounded-full  group-hover:w-10 transition-all  duration-75  `}
+                        <hr className={`w-4/6 h-2 rounded-full   group-hover:w-2 transition-all  duration-1000  `}
                         color={theme.foreground} />
                                 </a>
                             </li>

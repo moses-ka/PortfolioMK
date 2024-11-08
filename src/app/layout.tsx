@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from './nav'
+import Footer from './components/Footer';
 import LoadingAnimation from "./loadingAnimation";
+
 
 export const metadata: Metadata = {
   title: "Moses KM",
@@ -21,6 +23,7 @@ export default function RootLayout({
       <body className='body'>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
    
