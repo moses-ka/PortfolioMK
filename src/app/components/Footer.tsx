@@ -2,6 +2,7 @@
 import React from 'react'
 import ThemeStore from "../store";
 import { motion } from 'framer-motion'
+import { RiExternalLinkLine } from "react-icons/ri";
 
 
 export default function Footer() {
@@ -38,9 +39,13 @@ export default function Footer() {
                             color={localTheme.foreground} />
                     </div>
                     <div>
-                        <p className='text-right text-xl md:text-2xl'>
-                            &copy; 2024 Moses KM
-                        </p>
+                        <div className='text-center text-xl md:text-2xl'>
+                          <div className='flex justify-end items-center p-4 gap-2'>
+                           <RiExternalLinkLine size={24} className='inline m-2 ' />
+                          <a href="https://github.com/moses-ka" target="_blank" rel="noopener noreferrer">
+                           GitHub</a>
+                          </div>
+                        </div>
                         <p className='text-xl md:text-2xl '>
                             Design and Developed by Moses KM
                         </p>
